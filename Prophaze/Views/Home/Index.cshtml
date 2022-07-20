@@ -1,0 +1,31 @@
+﻿@model Prophaze.Models.CipherModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+@{  
+    var data = ViewData["Message"];  
+} 
+
+@using(Html.BeginForm("Index","HOme",FormMethod.Post))
+{
+    <style>
+        div{
+            text-align:center;
+        }
+        input.class1{
+        background-color: #E8E8E8 ;
+        height: 40px;
+        width: 600px;
+        font-weight: bold;
+        }
+        label{
+            font-size:x-large
+        }
+    </style>
+
+    <div><h1>Welcome </h1></div>
+    <div><p>Enter the Payload: </p>
+      @Html.TextBoxFor(m=> m.Cipher, new{@class="class1"})  </div>
+    <div><input type="submit" value="Submit" /></div>
+    <div> <Label>Decoded Text:</Label><Label style="color:red">@data</Label> </div>
+}
